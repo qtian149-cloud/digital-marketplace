@@ -5,7 +5,7 @@
         <span class="brand-mark">S</span>
         <strong>数贸后台</strong>
       </router-link>
-      <router-link to="/user">用户中心</router-link>
+      <router-link to="/user">前台用户中心</router-link>
       <router-link to="/seller">卖家中心</router-link>
       <router-link to="/admin" class="active">管理后台</router-link>
       <a
@@ -151,7 +151,7 @@ const notices = [
 const adminMenus = [
   {
     key: 'overview',
-    label: '数据概览',
+    label: '仪表盘',
     description: '平台核心数据 / 订单、资金、风险与通知概览',
     action: '刷新数据',
     cards: stats,
