@@ -15,6 +15,7 @@
 
       <nav class="nav">
         <router-link to="/">首页</router-link>
+        <router-link to="/user">用户中心</router-link>
         <router-link to="/tools">工具中心</router-link>
       </nav>
 
@@ -36,5 +37,5 @@ import { useRoute } from 'vue-router'
 
 const route = useRoute()
 
-const isConsoleRoute = computed(() => ['/user', '/seller', '/admin', '/dj-e0c41416b5a1/login'].some((path) => route.path.startsWith(path)))
+const isConsoleRoute = computed(() => ['/seller', '/admin', '/dj-e0c41416b5a1/login'].some((path) => route.path.startsWith(path)))
 </script>
