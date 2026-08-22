@@ -5,7 +5,7 @@
         <span class="brand-mark">S</span>
         <strong>数贸后台</strong>
       </router-link>
-      <router-link to="/user">用户中心</router-link>
+      <router-link to="/user">前台用户中心</router-link>
       <router-link to="/seller" class="active">卖家中心</router-link>
       <router-link to="/admin">管理后台</router-link>
       <span>商品管理</span>
