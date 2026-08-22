@@ -395,6 +395,10 @@ input {
   min-height: 100vh;
 }
 
+.dujiao-admin {
+  background: #f5f7fb;
+}
+
 .console-sidebar {
   display: grid;
   align-content: start;
@@ -414,25 +418,74 @@ input {
   text-decoration: none;
 }
 
-.console-sidebar a,
-.console-sidebar span {
+.console-brand small {
   display: block;
+  margin-top: 2px;
+  color: var(--dm-muted);
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.console-sidebar a,
+.console-sidebar span,
+.console-menu-button {
+  display: block;
+  width: 100%;
   padding: 11px 12px;
+  border: 0;
   border-radius: 8px;
   color: #344054;
   font-size: 14px;
+  font-weight: 500;
+  text-align: left;
   text-decoration: none;
+  background: transparent;
+  cursor: pointer;
+  transition: 0.18s ease;
 }
 
 .console-sidebar a.active,
-.console-sidebar .router-link-active {
+.console-sidebar .router-link-active,
+.console-menu-button.active,
+.console-menu-button:hover {
   color: var(--dm-blue);
   background: var(--dm-blue-soft);
   font-weight: 800;
 }
 
+.dujiao-admin .console-sidebar {
+  gap: 10px;
+  padding: 18px 10px;
+}
+
+.dujiao-admin .console-sidebar a {
+  min-height: 42px;
+  padding: 12px 14px;
+}
+
+.dujiao-admin .admin-menu-root {
+  margin-bottom: 8px;
+}
+
+.dujiao-admin .admin-menu-item {
+  color: #1f2a44;
+  background: transparent;
+}
+
+.dujiao-admin .admin-menu-item.active,
+.dujiao-admin .admin-menu-root.active {
+  color: #0059ff;
+  background: #eaf2ff;
+  font-weight: 800;
+}
+
 .console-sidebar span {
   color: var(--dm-muted);
+}
+
+.console-menu-button:focus-visible {
+  outline: 2px solid rgba(7, 93, 240, 0.35);
+  outline-offset: 2px;
 }
 
 .console-content {
@@ -467,6 +520,18 @@ input {
   color: var(--dm-blue);
   font-size: 14px;
   text-decoration: none;
+}
+
+.admin-user-badge {
+  display: inline-flex;
+  align-items: center;
+  min-height: 30px;
+  padding: 0 12px;
+  border-radius: 999px;
+  color: #344054;
+  background: #f2f4f7;
+  font-size: 13px;
+  font-weight: 700;
 }
 
 .page-grid {
@@ -699,6 +764,42 @@ input {
   gap: 14px;
 }
 
+.admin-module-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(260px, 0.65fr);
+  gap: 14px;
+}
+
+.module-table {
+  margin: 12px -16px -16px;
+  width: calc(100% + 32px);
+}
+
+.module-actions-list {
+  display: grid;
+  gap: 10px;
+  margin-top: 14px;
+}
+
+.module-action {
+  width: 100%;
+  min-height: 38px;
+  padding: 0 12px;
+  border: 1px solid var(--dm-border);
+  border-radius: 8px;
+  color: #24324b;
+  text-align: left;
+  background: #ffffff;
+  cursor: pointer;
+  transition: 0.18s ease;
+}
+
+.module-action:hover {
+  color: var(--dm-blue);
+  border-color: rgba(7, 93, 240, 0.28);
+  background: var(--dm-blue-soft);
+}
+
 .donut {
   display: grid;
   place-items: center;
@@ -743,7 +844,8 @@ input {
   .card-grid,
   .product-grid,
   .tool-grid,
-  .admin-grid {
+  .admin-grid,
+  .admin-module-grid {
     grid-template-columns: 1fr;
   }
 
