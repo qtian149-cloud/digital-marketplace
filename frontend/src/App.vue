@@ -1,6 +1,6 @@
 <template>
-  <div class="app-shell">
-    <header class="topbar">
+  <div class="app-shell" :class="{ 'console-app': isConsoleRoute }">
+    <header v-if="!isConsoleRoute" class="topbar">
       <router-link class="brand" to="/">
         <span class="brand-mark">S</span>
         <span>
@@ -16,9 +16,6 @@
       <nav class="nav">
         <router-link to="/">首页</router-link>
         <router-link to="/tools">工具中心</router-link>
-        <router-link to="/user">用户中心</router-link>
-        <router-link to="/seller">卖家中心</router-link>
-        <router-link to="/admin">管理后台</router-link>
       </nav>
 
       <div class="top-actions">
@@ -27,8 +24,17 @@
       </div>
     </header>
 
-    <main class="main">
+    <main :class="isConsoleRoute ? 'console-main' : 'main'">
       <router-view />
     </main>
   </div>
 </template>
+
+<script setup lang="ts">
+import { computed } from 'vue'
+import { useRoute } from 'vue-router'
+
+const route = useRoute()
+
+const isConsoleRoute = computed(() => ['/user', '/seller', '/admin', '/dj-e0c41416b5a1/login'].some((path) => route.path.startsWith(path)))
+</script>
