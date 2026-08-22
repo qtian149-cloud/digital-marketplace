@@ -19,6 +19,194 @@ body {
   margin: 0;
 }
 
+button,
+input {
+  font: inherit;
+}
+
+.el-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 34px;
+  padding: 0 16px;
+  border: 1px solid var(--dm-border);
+  border-radius: 8px;
+  color: #24324b;
+  background: #ffffff;
+  cursor: pointer;
+  transition: 0.18s ease;
+}
+
+.el-button:hover {
+  border-color: var(--dm-blue);
+  color: var(--dm-blue);
+}
+
+.el-button--primary {
+  border-color: var(--button-color, var(--dm-blue));
+  color: #ffffff;
+  background: var(--button-color, var(--dm-blue));
+}
+
+.el-button--primary:hover {
+  color: #ffffff;
+  background: var(--dm-blue-dark);
+}
+
+.el-button--large {
+  min-height: 42px;
+  padding: 0 24px;
+}
+
+.el-button--small {
+  min-height: 30px;
+  padding: 0 12px;
+}
+
+.el-button.is-plain {
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.72);
+  background: transparent;
+}
+
+.el-button.is-link {
+  min-height: auto;
+  padding: 0;
+  border: 0;
+  color: var(--dm-blue);
+  background: transparent;
+}
+
+.el-card {
+  display: block;
+  padding: 16px;
+  border: 1px solid var(--dm-border);
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04);
+}
+
+.el-input {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  height: 40px;
+  border: 1px solid var(--dm-border);
+  border-radius: 8px;
+  background: #f8fafc;
+}
+
+.el-input input {
+  min-width: 0;
+  flex: 1;
+  height: 100%;
+  padding: 0 14px;
+  border: 0;
+  outline: 0;
+  color: #24324b;
+  background: transparent;
+}
+
+.el-input__append {
+  display: inline-flex;
+  align-items: center;
+  align-self: stretch;
+  padding: 0 16px;
+  color: #24324b;
+  border-left: 1px solid var(--dm-border);
+  background: #ffffff;
+}
+
+.el-tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 24px;
+  padding: 0 10px;
+  border-radius: 999px;
+  color: var(--dm-blue);
+  background: var(--dm-blue-soft);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.el-tag.is-dark {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.el-tag--success {
+  color: var(--dm-success);
+  background: #ecfdf3;
+}
+
+.el-tag--danger {
+  color: var(--dm-danger);
+  background: #fff1f0;
+}
+
+.el-avatar {
+  display: inline-grid;
+  place-items: center;
+  border-radius: 999px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #075df0, #38bdf8);
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.el-segmented,
+.el-date-picker {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px;
+  border: 1px solid var(--dm-border);
+  border-radius: 8px;
+  background: #f8fafc;
+}
+
+.el-segmented button {
+  border: 0;
+  border-radius: 6px;
+  padding: 6px 10px;
+  color: var(--dm-muted);
+  background: transparent;
+  cursor: pointer;
+}
+
+.el-segmented button.active {
+  color: var(--dm-blue);
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+}
+
+.el-date-picker input {
+  width: 120px;
+  border: 0;
+  outline: 0;
+  background: transparent;
+}
+
+.el-empty {
+  display: grid;
+  place-items: center;
+  gap: 8px;
+  min-height: 150px;
+  color: var(--dm-muted);
+}
+
+.el-empty__icon {
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  color: var(--dm-blue);
+  background: var(--dm-blue-soft);
+  font-weight: 800;
+}
+
 .app-shell {
   min-height: 100vh;
   background: radial-gradient(circle at top left, #ffffff 0, #f6f8fc 42%, #f3f7ff 100%);
