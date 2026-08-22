@@ -1,17 +1,33 @@
 <template>
-  <div class="dashboard-layout">
-    <aside class="dashboard-menu">
-      <span class="active">控制台</span>
+  <div class="console-layout">
+    <aside class="console-sidebar">
+      <router-link class="console-brand" to="/admin">
+        <span class="brand-mark">S</span>
+        <strong>数贸后台</strong>
+      </router-link>
+      <router-link to="/user" class="active">用户中心</router-link>
+      <router-link to="/seller">卖家中心</router-link>
+      <router-link to="/admin">管理后台</router-link>
       <span>我的订单</span>
       <span>我的资产</span>
       <span>充值记录</span>
       <span>提现记录</span>
-      <span>我的收藏</span>
-      <span>优惠券</span>
       <span>消息中心</span>
     </aside>
 
-    <div class="page-grid">
+    <div class="console-content">
+      <header class="console-topbar">
+        <div>
+          <h2>用户中心</h2>
+          <p class="muted">独立后台 / 普通用户工作台</p>
+        </div>
+        <div class="console-actions">
+          <router-link to="/">返回前台</router-link>
+          <button class="el-button" @click="logout">退出</button>
+        </div>
+      </header>
+
+      <div class="page-grid">
       <section class="section-head">
         <div>
           <h2>用户中心</h2>
@@ -53,11 +69,21 @@
       <section class="card-grid">
         <el-card v-for="item in quickActions" :key="item" shadow="never">{{ item }}</el-card>
       </section>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
+import { useRouter } from 'vue-router'
+
+const router = useRouter()
+
+const logout = () => {
+  localStorage.removeItem('dm_console_session')
+  router.push('/dj-e0c41416b5a1/login')
+}
+
 const stats = [
   { label: '可用余额', value: '¥0.49' },
   { label: '我的订单', value: '182' },
