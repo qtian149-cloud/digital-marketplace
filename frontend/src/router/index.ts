@@ -14,7 +14,7 @@ export const router = createRouter({
     { path: '/', name: 'marketplace', component: MarketplaceHome },
     { path: '/tools', name: 'tools-center', component: ToolsCenter },
     { path: consoleLoginPath, name: 'console-login', component: ConsoleLogin },
-    { path: '/user', name: 'user-center', component: UserCenter, meta: { requiresConsoleAuth: true } },
+    { path: '/user', name: 'user-center', component: UserCenter },
     { path: '/seller', name: 'seller-center', component: SellerCenter, meta: { requiresConsoleAuth: true } },
     { path: '/admin', name: 'admin-console', component: AdminConsole, meta: { requiresConsoleAuth: true } },
   ],
