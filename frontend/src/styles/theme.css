@@ -1,0 +1,375 @@
+:root {
+  font-family: Inter, "PingFang SC", "Microsoft YaHei", Arial, sans-serif;
+  color: #101828;
+  background: #f6f8fc;
+  --dm-blue: #075df0;
+  --dm-blue-dark: #003fb8;
+  --dm-blue-soft: #edf4ff;
+  --dm-border: #e5eaf3;
+  --dm-muted: #64748b;
+  --dm-danger: #f04438;
+  --dm-success: #039855;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+.app-shell {
+  min-height: 100vh;
+  background: radial-gradient(circle at top left, #ffffff 0, #f6f8fc 42%, #f3f7ff 100%);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: inherit;
+  text-decoration: none;
+  min-width: 190px;
+}
+
+.brand-mark {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #1465ff, #063dac);
+  font-weight: 700;
+}
+
+.brand small {
+  display: block;
+  margin-top: 2px;
+  color: var(--dm-muted);
+  font-size: 11px;
+}
+
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  min-height: 72px;
+  padding: 0 22px;
+  background: #ffffff;
+  border-bottom: 1px solid var(--dm-border);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.search {
+  max-width: 520px;
+  min-width: 260px;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex: 1;
+}
+
+.nav a {
+  color: #24324b;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.nav .router-link-active {
+  color: var(--dm-blue);
+  font-weight: 700;
+}
+
+.top-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.main {
+  padding: 18px 22px 32px;
+}
+
+.page-grid {
+  display: grid;
+  gap: 18px;
+}
+
+.portal-layout {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  gap: 18px;
+}
+
+.side-panel {
+  display: grid;
+  align-content: start;
+  gap: 12px;
+}
+
+.category-list {
+  padding: 10px;
+  border: 1px solid var(--dm-border);
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.category-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 38px;
+  padding: 0 10px;
+  border-radius: 7px;
+  color: #24324b;
+  font-size: 14px;
+}
+
+.category-item.active {
+  color: #ffffff;
+  background: var(--dm-blue);
+}
+
+.join-card {
+  padding: 16px;
+  border-radius: 8px;
+  background: linear-gradient(180deg, #eef5ff, #ffffff);
+  border: 1px solid var(--dm-border);
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 24px;
+  min-height: 270px;
+  padding: 32px;
+  border-radius: 8px;
+  color: #ffffff;
+  background:
+    radial-gradient(circle at 75% 20%, rgba(96, 165, 250, 0.62), transparent 26%),
+    linear-gradient(135deg, #063dac 0%, #075df0 52%, #0b84ff 100%);
+  overflow: hidden;
+}
+
+.hero h1 {
+  margin: 0 0 10px;
+  font-size: 38px;
+  line-height: 1.2;
+}
+
+.hero p {
+  max-width: 680px;
+  margin: 0;
+  line-height: 1.7;
+}
+
+.hero-actions,
+.module-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 22px;
+}
+
+.floating-icons {
+  display: grid;
+  grid-template-columns: repeat(3, 88px);
+  grid-auto-rows: 72px;
+  gap: 18px;
+  align-content: center;
+  justify-content: center;
+}
+
+.brand-icon {
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 18px 48px rgba(0, 25, 110, 0.22);
+  font-size: 24px;
+  font-weight: 800;
+  backdrop-filter: blur(8px);
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.card-grid,
+.product-grid,
+.tool-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.metric-card,
+.feature-card,
+.product-card,
+.tool-card,
+.panel-card {
+  border-radius: 8px;
+}
+
+.metric-value {
+  margin-top: 8px;
+  color: var(--dm-blue);
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.product-logo,
+.tool-logo {
+  display: grid;
+  place-items: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  color: #ffffff;
+  background: linear-gradient(135deg, #1d4ed8, #38bdf8);
+  font-weight: 800;
+  font-size: 20px;
+}
+
+.price {
+  color: var(--dm-danger);
+  font-weight: 800;
+}
+
+.dashboard-layout {
+  display: grid;
+  grid-template-columns: 190px minmax(0, 1fr);
+  gap: 18px;
+}
+
+.dashboard-menu {
+  padding: 14px;
+  border: 1px solid var(--dm-border);
+  border-radius: 8px;
+  background: #ffffff;
+}
+
+.dashboard-menu a,
+.dashboard-menu span {
+  display: block;
+  padding: 10px 12px;
+  border-radius: 7px;
+  color: #344054;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.dashboard-menu .active {
+  color: var(--dm-blue);
+  background: var(--dm-blue-soft);
+  font-weight: 700;
+}
+
+.table-card {
+  border: 1px solid var(--dm-border);
+  border-radius: 8px;
+  background: #ffffff;
+  overflow: hidden;
+}
+
+.mini-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.mini-table th,
+.mini-table td {
+  padding: 13px 16px;
+  border-bottom: 1px solid var(--dm-border);
+  text-align: left;
+  font-size: 13px;
+}
+
+.mini-table th {
+  color: var(--dm-muted);
+  font-weight: 600;
+  background: #fbfcff;
+}
+
+.seller-chart {
+  display: flex;
+  align-items: end;
+  gap: 12px;
+  height: 180px;
+  padding-top: 22px;
+}
+
+.seller-chart span {
+  flex: 1;
+  min-width: 10px;
+  border-radius: 6px 6px 0 0;
+  background: linear-gradient(180deg, #0b84ff, #dbeafe);
+}
+
+.admin-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(260px, 0.8fr);
+  gap: 14px;
+}
+
+.donut {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 4px;
+  width: 190px;
+  height: 190px;
+  margin: 18px auto;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, #ffffff 0 48%, transparent 49%),
+    conic-gradient(#075df0 0 25%, #19b4ff 25% 44%, #12b76a 44% 66%, #f79009 66% 82%, #7a5af8 82% 100%);
+}
+
+.donut strong {
+  font-size: 26px;
+}
+
+.muted {
+  color: var(--dm-muted);
+}
+
+@media (max-width: 900px) {
+  .topbar {
+    height: auto;
+    padding: 12px;
+    flex-wrap: wrap;
+  }
+
+  .nav {
+    order: 3;
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .portal-layout,
+  .dashboard-layout,
+  .hero,
+  .stat-grid,
+  .card-grid,
+  .product-grid,
+  .tool-grid,
+  .admin-grid {
+    grid-template-columns: 1fr;
+  }
+}
