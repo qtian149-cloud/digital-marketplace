@@ -1,17 +1,19 @@
 <template>
-  <div class="console-layout">
+  <div class="console-layout dujiao-admin">
     <aside class="console-sidebar">
       <router-link class="console-brand" to="/admin">
         <span class="brand-mark">S</span>
-        <strong>数贸后台</strong>
+        <span>
+          <strong>数贸后台</strong>
+          <small>Digital Admin</small>
+        </span>
       </router-link>
-      <router-link to="/user">前台用户中心</router-link>
-      <router-link to="/seller">卖家中心</router-link>
-      <router-link to="/admin" class="active">管理后台</router-link>
+      <a class="admin-menu-root active" href="#" @click.prevent="activeSection = 'overview'">管理后台</a>
       <a
         v-for="item in adminMenus"
         :key="item.key"
         href="#"
+        class="admin-menu-item"
         :class="{ active: activeSection === item.key }"
         @click.prevent="activeSection = item.key"
       >
@@ -22,11 +24,13 @@
     <div class="console-content">
       <header class="console-topbar">
         <div>
-          <h2>管理后台</h2>
-          <p class="muted">独立后台 / 仅管理员可进入 / 当前：{{ currentMenu.label }}</p>
+          <h2>{{ currentMenu.label }}</h2>
+          <p class="muted">管理后台 / {{ currentMenu.description }}</p>
         </div>
         <div class="console-actions">
+          <router-link to="/seller">卖家中心</router-link>
           <router-link to="/">返回前台</router-link>
+          <span class="admin-user-badge">admin</span>
           <button class="el-button" @click="logout">退出</button>
         </div>
       </header>
@@ -35,7 +39,7 @@
       <section class="section-head">
         <div>
           <h2>{{ currentMenu.label }}</h2>
-          <p class="muted">{{ currentMenu.description }}</p>
+          <p class="muted">当前位置：管理后台 / {{ currentMenu.label }}</p>
         </div>
         <el-date-picker v-if="activeSection === 'overview'" type="daterange" start-placeholder="开始日期" end-placeholder="结束日期" />
         <el-button v-else type="primary">{{ currentMenu.action }}</el-button>
@@ -151,7 +155,7 @@ const notices = [
 const adminMenus = [
   {
     key: 'overview',
-    label: '仪表盘',
+    label: '数据概览',
     description: '平台核心数据 / 订单、资金、风险与通知概览',
     action: '刷新数据',
     cards: stats,
